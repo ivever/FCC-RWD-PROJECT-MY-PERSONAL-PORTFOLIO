@@ -17,6 +17,7 @@ body {
     min-height: 75px;
     padding: 0px 20px;
     display: flex;
+    z-index: 10;
     justify-content: space-around;
     align-items: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
@@ -91,30 +92,58 @@ ul > li {
 
 #welcome-section {
     color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    line-height: 2;
     background-image: url('https://download.hipwallpaper.com/desktop/1600/900/9/77/mkoH0z.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-#welcome-section > h1 {
+ #welcome {
+    position: relative;
+    top: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    line-height: 1.7;
+    animation: animationFrames ease-out 0.8s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    animation-fill-mode:forwards; /*when the spec is finished*/
+}
+
+@keyframes animationFrames{
+    0% {
+      opacity:0;
+      transform:  translate(-1500px,0px)  scaleX(0.00) scaleY(0.00);
+    }
+    60% {
+      opacity:1;
+      transform:  translate(30px,0px)  ;
+    }
+    80% {
+      transform:  translate(-10px,0px)  ;
+    }
+    100% {
+      opacity:1;
+      transform:  translate(0px,0px)  scaleX(1.00) scaleY(1.00);
+    }
+  }
+  
+
+#welcome > h1 {
     font-weight: 200;
     font-size: 1.8rem;
 }
 
-#welcome-section > #name {
-    font-size: 3.5rem;
+#welcome > #name {
+    font-size: 3.3rem;
     font-weight: 10;
 }
 
-#welcome-section > p {
+#welcome > p {
     font-style: italic;
     font-size: 1.8rem;
     font-weight: 200;
@@ -124,6 +153,7 @@ ul > li {
 .contactbtn {
     width: 150px;
     padding: 15px;
+    margin-top: 20px;
     border: none;
     font-size: 1.13rem;
     font-weight: bold;
@@ -171,7 +201,7 @@ ul > li {
     }
 
     #tech-section {
-        margin-top: -50px;
+        margin-top: 20px;
     }
 }
 
@@ -183,7 +213,7 @@ ul > li {
         align-items: center;
     }
     #tech-section {
-        margin-top: -100px;
+        margin-top: 0px;
     }
 
 }
