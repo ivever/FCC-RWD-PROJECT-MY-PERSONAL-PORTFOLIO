@@ -83,10 +83,11 @@ ul > li {
 .nav-link {
     text-decoration: none;
     color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 .nav-link:hover {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 
